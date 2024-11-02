@@ -8,8 +8,8 @@ const SearchBar = () => {
   const handleSearch = () => {};
 
   return (
-    <form className="search-bar" onSubmit={handleSearch}>
-      <div className="searchbar__items">
+    <form className="searchbar" onSubmit={handleSearch}>
+      <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
