@@ -68,6 +68,7 @@ const CarCard = ({ car }: CarCardProps) => {
           <CustomButton
             title="View More"
             containerStyles="w-full py-4 rounded-full bg-primary-blue"
+            textStyles="text-white"
           />
         </div>
       </div>
