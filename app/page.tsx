@@ -7,6 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import ShowMore from "@/components/ShowMore";
 import { fuels, manufacturers, yearsOfProduction } from "@/constants";
 import { fetchCars } from "@/utils";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { isArrayBufferView } from "util/types";
 
@@ -77,9 +78,23 @@ export default function Home() {
                 <CarCard car={car} />
               ))}
             </div>
+
+            {loading && (
+              <div className="mt-16 w-full flex-center">
+                <Image
+                  src="/loader.svg"
+                  alt="loader"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+            )}
+
             <ShowMore
-              pageNumber={(limit || 10) / 10}
+              pageNumber={limit / 10}
               isNext={(limit || 10) > allCars.length}
+              setLimit={setLimit}
             />
           </section>
         ) : (
